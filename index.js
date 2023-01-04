@@ -7,7 +7,7 @@ const io = require('socket.io')(http);
 const fs = require('fs');
 
 app.use('/public', express.static('public'))
-
+const PORT=process.env.PORT;
 app.get('/', (req, res) =>  {
   res.sendFile(__dirname + '/'); 
 });
@@ -69,5 +69,8 @@ io.on('connection',  socket => {
 
 });
 
-http.listen(3000, () => console.log('listening on *:3000'));
-    
+app.listen(PORT||3000,()=>{
+
+
+    console.log("Running")
+})    
