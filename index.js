@@ -69,8 +69,5 @@ io.on('connection',  socket => {
 
 });
 
-app.listen(PORT||3000,()=>{
+http.listen(PORT||3000, () => console.log('listening on *:3000'));
 
-
-    console.log("Running")
-})    
